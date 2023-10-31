@@ -1,10 +1,13 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-const ImageDetail = () => {
+const ImageDetail = (props) => {
+  console.log("props image", props);
   return (
     <View>
-      <Text>ImageDetail</Text>
+      <Image source={props.imageSource} />
+      <Text>{props.title}</Text>
+      <Text>Image Score - {props.imageSource}</Text>
     </View>
   );
 };
