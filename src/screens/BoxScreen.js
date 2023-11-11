@@ -21,17 +21,17 @@ const styles = StyleSheet.create({
   textStyle: {
     borderWidth: 2,
     borderColor: "red",
-    flex: 4,
   },
   textStyle1: {
     borderWidth: 2,
     borderColor: "red",
-    flex: 4,
+    // alignSelf: "center",
+    // alignSelf: "flex-end",
+    alignSelf: "flex-start",
   },
   textStyle2: {
     borderWidth: 2,
     borderColor: "red",
-    flex: 2,
   },
 });
 export default BoxScreen;
