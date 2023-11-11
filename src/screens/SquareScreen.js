@@ -8,21 +8,21 @@ const MAX_COLOR = 255;
 const MIN_COLOR = 0;
 const SquareScreen = () => {
   const reducer = (state, action) => {
-    switch (action.colorToChange) {
-      case "red":
+    switch (action.type) {
+      case "change_red":
         return {
           ...state,
-          red: validateColor(state.red + action.amount),
+          red: validateColor(state.red + action.payload),
         };
-      case "green":
+      case "change_green":
         return {
           ...state,
-          green: validateColor(state.green + action.amount),
+          green: validateColor(state.green + action.payload),
         };
-      case "blue":
+      case "change_blue":
         return {
           ...state,
-          blue: validateColor(state.blue + action.amount),
+          blue: validateColor(state.blue + action.payload),
         };
       default:
         return state;
@@ -47,28 +47,28 @@ const SquareScreen = () => {
       <ColorCount
         color={"Red"}
         onIncrease={() =>
-          dispatch({ colorToChange: "red", amount: COLOR_INCREAMENT })
+          dispatch({ type: "change_red", payload: COLOR_INCREAMENT })
         }
         onDecrease={() =>
-          dispatch({ colorToChange: "red", amount: -COLOR_DECREAMENT })
+          dispatch({ type: "change_red", payload: -COLOR_DECREAMENT })
         }
       />
       <ColorCount
         color={"Blue"}
         onIncrease={() =>
-          dispatch({ colorToChange: "green", amount: COLOR_INCREAMENT })
+          dispatch({ type: "change_green", payload: COLOR_INCREAMENT })
         }
         onDecrease={() =>
-          dispatch({ colorToChange: "green", amount: -COLOR_DECREAMENT })
+          dispatch({ type: "change_green", payload: -COLOR_DECREAMENT })
         }
       />
       <ColorCount
         color={"Green"}
         onIncrease={() =>
-          dispatch({ colorToChange: "blue", amount: COLOR_INCREAMENT })
+          dispatch({ type: "change_blue", payload: COLOR_INCREAMENT })
         }
         onDecrease={() =>
-          dispatch({ colorToChange: "blue", amount: -COLOR_DECREAMENT })
+          dispatch({ type: "change_blue", payload: -COLOR_DECREAMENT })
         }
       />
       <View
