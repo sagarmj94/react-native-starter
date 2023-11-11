@@ -24,10 +24,16 @@ const styles = StyleSheet.create({
   },
   textStyle1: {
     borderWidth: 2,
-    borderColor: "red",
-    // alignSelf: "center",
-    // alignSelf: "flex-end",
-    alignSelf: "flex-start",
+    borderColor: "green",
+    position: "absolute",
+    // top: 0,
+    // bottom: 0,
+    // right: 0,
+    // left: 0,
+    ...StyleSheet.absoluteFillObject,
+  },
+  textStyle2: {
+    borderWidth: 2,
   },
   textStyle2: {
     borderWidth: 2,
